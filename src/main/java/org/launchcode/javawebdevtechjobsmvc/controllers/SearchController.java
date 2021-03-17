@@ -27,7 +27,7 @@ public class SearchController {
     @RequestMapping("results")
     public String displaySearchResults(Model model,@RequestParam String searchType,@RequestParam String searchTerm) {
         ArrayList<Job> jobs;
-        if (searchType.toLowerCase().equals("all") || searchType.toLowerCase().equals("") ) {
+        if (searchType.toLowerCase().equals("all") && searchType.toLowerCase().equals("") ) {
             jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
         } else {
